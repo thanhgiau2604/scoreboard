@@ -1,38 +1,213 @@
-.App {
-  text-align: center;
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:800);
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
 }
 
-.App-header {
-  background-color: #282c34;
+body {
   min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+
+}
+
+.scoreboard {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../public/images/bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.main-container {
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+}
+
+.score-heading {
+  position: relative;
+  height: 100px;
+  padding: 0 30px;
+  font-size: 30px;
+  font-family: "Open Sans", Impact;
+  /* color: #c4cff1;
+  text-shadow: 0px 0px 0 rgb(137, 156, 213), 1px 1px 0 rgb(129, 148, 205), 2px 2px 0 rgb(120, 139, 196), 3px 3px 0 rgb(111, 130, 187), 4px 4px 0 rgb(103, 122, 179), 5px 5px 0 rgb(94, 113, 170), 6px 6px 0 rgb(85, 104, 161), 7px 7px 0 rgb(76, 95, 152), 8px 8px 0 rgb(68, 87, 144), 9px 9px 0 rgb(59, 78, 135), 10px 10px 0 rgb(50, 69, 126), 11px 11px 0 rgb(42, 61, 118), 12px 12px 0 rgb(33, 52, 109), 13px 13px 0 rgb(24, 43, 100), 14px 14px 0 rgb(15, 34, 91), 15px 15px 0 rgb(7, 26, 83), 16px 16px 0 rgb(-2, 17, 74), 17px 17px 0 rgb(-11, 8, 65), 18px 18px 0 rgb(-19, 0, 57), 19px 19px 0 rgb(-28, -9, 48), 20px 20px 0 rgb(-37, -18, 39), 21px 21px 20px rgba(0, 0, 0, 1), 21px 21px 1px rgba(0, 0, 0, 0.5), 0px 0px 20px rgba(0, 0, 0, .2); */
+}
+
+.score-heading .text-bg {
+  width: 100%;
+  height: 100%;
+  opacity: 0.2;
+  border-radius: 8px;
+  background: rgb(231, 197, 252);
+  background: radial-gradient(circle, rgba(231, 197, 252, 1) 0%, rgba(2, 0, 36, 1) 100%);
+}
+
+
+.score-heading .text-wrap {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 1;
+}
+
+.trophy-img {
+  width: 30px;
+}
+
+.text-wrap h1 {
+  font-size: 60px;
+  font-weight: 700;
+}
+
+.score-label {
+  height: 60px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: 30px;
+  font-family: 'Dancing Script', cursive;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.score-label-item {
+  border-radius: 20px 50px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 2px 4px 3px 0px rgba(0, 0, 0, 0.7);
+  color: white;
+  position: relative;
+}
+
+.score-label-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: white;
+  opacity: 0.1;
+  border-radius: 20px 50px;
+}
+
+.label-rank {
+  width: 200px;
+}
+
+.label-name {
+  flex-grow: 1;
+  border-radius: 0;
+  transform: skew(30deg);
+}
+
+.label-name span {
+  transform: skew(-30deg);
+}
+
+.label-name .score-label-bg {
+  border-radius: 0;
+}
+
+.label-score {
+  width: 250px;
+}
+
+.score-items {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+.text {
+  fill: none;
+  stroke-width: 3;
+  stroke-linejoin: round;
+  stroke-dasharray: 70 330;
+  stroke-dashoffset: 0;
+  -webkit-animation: stroke 6s infinite linear;
+  animation: stroke 6s infinite linear;
+}
+
+.text:nth-child(5n+1) {
+  stroke: #F2385A;
+  -webkit-animation-delay: -1.2s;
+  animation-delay: -1.2s;
+}
+
+.text:nth-child(5n+2) {
+  stroke: #F5A503;
+  -webkit-animation-delay: -2.4s;
+  animation-delay: -2.4s;
+}
+
+.text:nth-child(5n+3) {
+  stroke: #E9F1DF;
+  -webkit-animation-delay: -3.6s;
+  animation-delay: -3.6s;
+}
+
+.text:nth-child(5n+4) {
+  stroke: #56D9CD;
+  -webkit-animation-delay: -4.8s;
+  animation-delay: -4.8s;
+}
+
+.text:nth-child(5n+5) {
+  stroke: #3AA1BF;
+  -webkit-animation-delay: -6s;
+  animation-delay: -6s;
+}
+
+@-webkit-keyframes stroke {
+  100% {
+    stroke-dashoffset: -400;
+  }
+}
+
+@keyframes stroke {
+  100% {
+    stroke-dashoffset: -400;
+  }
+}
+
+svg {
+  width: 500px;
+  height: 100%;
+  font-size: 120px;
+}
+
+.text-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  gap: 10px;
 }
